@@ -29,6 +29,7 @@ class Condition {
 
   int get code => _code;
   WeatherCondition get condition => _cond;
+  String get description => WeatherConditionCodes.descriptionByCode(code);
 
   set code(int code) => _cond = WeatherConditionCodes.getConditionbyCode(code);
 
@@ -41,7 +42,6 @@ class Condition {
 
   factory Condition.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
-
     return Condition(map['code']);
   }
 
@@ -291,6 +291,22 @@ class WeatherConditionCodes {
   static Map<int, Map<String, Object>> get asMap => _codes;
 
   static List<int> get codes => _codes.keys.toList();
+
+  static String descriptionByCode(int code) {
+    var description = '';
+    try {
+      if (code < 200 || code > 804) {
+        throw ArgumentError('The code $code is not in range of 200 - 804.');
+      }
+
+      description = _codes[code]['description'];
+      description ??
+          (throw ArgumentError('The code $code is not a valid code.'));
+    } catch (e) {
+      stderr.writeAll(e);
+    }
+    return description;
+  }
 
   static WeatherCondition getConditionbyCode(int code) {
     WeatherCondition cond;
