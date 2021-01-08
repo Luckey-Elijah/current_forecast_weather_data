@@ -1,7 +1,6 @@
 An API for [OpenWeather's API](https://openweathermap.org/api) suite.
 
-Created from templates made available by Stagehand under a BSD-style
-[license][license].
+This repository is under a Mozilla Public License Version 2.0 [license][license].
 
 ## Usage
 
