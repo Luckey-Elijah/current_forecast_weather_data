@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 class Coordinates {
-  double longitude;
-  double latitude;
+  final double longitude;
+  final double latitude;
 
-  Coordinates({this.longitude, this.latitude});
+  const Coordinates({this.longitude, this.latitude});
 
   Coordinates copyWith({double longitude, double latitude}) {
     return Coordinates(
@@ -14,16 +14,16 @@ class Coordinates {
   }
 
   Map<String, dynamic> toMap() => {
-        'longitude': longitude,
-        'latitude': latitude,
+        'lon': longitude,
+        'lat': latitude,
       };
 
   factory Coordinates.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
     return Coordinates(
-      longitude: map['longitude'],
-      latitude: map['latitude'],
+      longitude: map['lon'],
+      latitude: map['lat'],
     );
   }
 

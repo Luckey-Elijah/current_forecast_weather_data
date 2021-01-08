@@ -1,18 +1,18 @@
 import 'dart:convert';
 
 class Main {
-  double temp;
+  double tempurature;
   double feelsLike;
-  double tempMin;
-  double tempMax;
+  double tempuratureMinimum;
+  double tempuratureMaximum;
   int pressure;
   int humidity;
 
   Main({
-    this.temp,
+    this.tempurature,
     this.feelsLike,
-    this.tempMin,
-    this.tempMax,
+    this.tempuratureMinimum,
+    this.tempuratureMaximum,
     this.pressure,
     this.humidity,
   });
@@ -26,10 +26,10 @@ class Main {
     int humidity,
   }) {
     return Main(
-      temp: temp ?? this.temp,
+      tempurature: tempurature ?? this.tempurature,
       feelsLike: feelsLike ?? this.feelsLike,
-      tempMin: tempMin ?? this.tempMin,
-      tempMax: tempMax ?? this.tempMax,
+      tempuratureMinimum: tempuratureMinimum ?? this.tempuratureMinimum,
+      tempuratureMaximum: tempuratureMaximum ?? this.tempuratureMaximum,
       pressure: pressure ?? this.pressure,
       humidity: humidity ?? this.humidity,
     );
@@ -37,10 +37,10 @@ class Main {
 
   Map<String, dynamic> toMap() {
     return {
-      'temp': temp,
-      'feelsLike': feelsLike,
-      'tempMin': tempMin,
-      'tempMax': tempMax,
+      'temp': tempurature,
+      'feels_like': feelsLike,
+      'temp_min': tempuratureMinimum,
+      'temp_max': tempuratureMaximum,
       'pressure': pressure,
       'humidity': humidity,
     };
@@ -50,10 +50,10 @@ class Main {
     if (map == null) return null;
 
     return Main(
-      temp: map['temp'],
-      feelsLike: map['feelsLike'],
-      tempMin: map['tempMin'],
-      tempMax: map['tempMax'],
+      tempurature: map['temp'],
+      feelsLike: map['feels_like'],
+      tempuratureMinimum: map['temp_min'],
+      tempuratureMaximum: map['temp_max'],
       pressure: map['pressure'],
       humidity: map['humidity'],
     );
@@ -65,7 +65,7 @@ class Main {
 
   @override
   String toString() {
-    return 'Main(temp: $temp, feelsLike: $feelsLike, tempMin: $tempMin, tempMax: $tempMax, pressure: $pressure, humidity: $humidity)';
+    return 'Main(temp: $tempurature, feelsLike: $feelsLike, tempMin: $tempuratureMinimum, tempMax: $tempuratureMaximum, pressure: $pressure, humidity: $humidity)';
   }
 
   @override
@@ -73,20 +73,20 @@ class Main {
     if (identical(this, o)) return true;
 
     return o is Main &&
-        o.temp == temp &&
+        o.tempurature == tempurature &&
         o.feelsLike == feelsLike &&
-        o.tempMin == tempMin &&
-        o.tempMax == tempMax &&
+        o.tempuratureMinimum == tempuratureMinimum &&
+        o.tempuratureMaximum == tempuratureMaximum &&
         o.pressure == pressure &&
         o.humidity == humidity;
   }
 
   @override
   int get hashCode {
-    return temp.hashCode ^
+    return tempurature.hashCode ^
         feelsLike.hashCode ^
-        tempMin.hashCode ^
-        tempMax.hashCode ^
+        tempuratureMinimum.hashCode ^
+        tempuratureMaximum.hashCode ^
         pressure.hashCode ^
         humidity.hashCode;
   }

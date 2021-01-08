@@ -14,7 +14,7 @@ class CurrentWeather {
   int visibility;
   Wind wind;
   Clouds clouds;
-  int dt;
+  DateTime dateTime;
   System sys;
   int timezone;
   int id;
@@ -29,7 +29,7 @@ class CurrentWeather {
     this.visibility,
     this.wind,
     this.clouds,
-    this.dt,
+    this.dateTime,
     this.sys,
     this.timezone,
     this.id,
@@ -45,7 +45,7 @@ class CurrentWeather {
     int visibility,
     Wind wind,
     Clouds clouds,
-    int dt,
+    DateTime dateTime,
     System sys,
     int timezone,
     int id,
@@ -60,7 +60,7 @@ class CurrentWeather {
       visibility: visibility ?? this.visibility,
       wind: wind ?? this.wind,
       clouds: clouds ?? this.clouds,
-      dt: dt ?? this.dt,
+      dateTime: dateTime ?? this.dateTime,
       sys: sys ?? this.sys,
       timezone: timezone ?? this.timezone,
       id: id ?? this.id,
@@ -78,7 +78,7 @@ class CurrentWeather {
       'visibility': visibility,
       'wind': wind?.toMap(),
       'clouds': clouds?.toMap(),
-      'dt': dt,
+      'dt': dateTime.toUtc(),
       'sys': sys?.toMap(),
       'timezone': timezone,
       'id': id,
@@ -99,7 +99,7 @@ class CurrentWeather {
       visibility: map['visibility'],
       wind: Wind.fromMap(map['wind']),
       clouds: Clouds.fromMap(map['clouds']),
-      dt: map['dt'],
+      dateTime: DateTime.fromMillisecondsSinceEpoch(map['dt']),
       sys: System.fromMap(map['sys']),
       timezone: map['timezone'],
       id: map['id'],
@@ -115,7 +115,7 @@ class CurrentWeather {
 
   @override
   String toString() =>
-      'CurrentWeather(coord: $coord, weather: $weather, base: $base, main: $main, visibility: $visibility, wind: $wind, clouds: $clouds, dt: $dt, sys: $sys, timezone: $timezone, id: $id, name: $name, cod: $cod)';
+      'CurrentWeather(coord: $coord, weather: $weather, base: $base, main: $main, visibility: $visibility, wind: $wind, clouds: $clouds, dateTime: $dateTime, sys: $sys, timezone: $timezone, id: $id, name: $name, cod: $cod)';
 
   @override
   bool operator ==(Object o) {
@@ -130,7 +130,7 @@ class CurrentWeather {
         o.visibility == visibility &&
         o.wind == wind &&
         o.clouds == clouds &&
-        o.dt == dt &&
+        o.dateTime == dateTime &&
         o.sys == sys &&
         o.timezone == timezone &&
         o.id == id &&
@@ -147,7 +147,7 @@ class CurrentWeather {
         visibility.hashCode ^
         wind.hashCode ^
         clouds.hashCode ^
-        dt.hashCode ^
+        dateTime.hashCode ^
         sys.hashCode ^
         timezone.hashCode ^
         id.hashCode ^
