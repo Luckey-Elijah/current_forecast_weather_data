@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:collection/collection.dart';
 import 'package:open_weather/current_weather.dart';
 import 'clouds.dart';
 import 'coordinates.dart';
@@ -123,11 +122,10 @@ class CurrentWeather {
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
-    final listEquals = const DeepCollectionEquality().equals;
 
     return o is CurrentWeather &&
         o.coord == coord &&
-        listEquals(o.weather, weather) &&
+        (o.weather == weather) &&
         o.base == base &&
         o.main == main &&
         o.visibility == visibility &&
