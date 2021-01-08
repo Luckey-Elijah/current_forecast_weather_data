@@ -7,21 +7,21 @@ import 'system.dart';
 import 'wind.dart';
 
 class CurrentWeather {
-  Coordinates coord;
-  List<Weather> weather;
-  String base;
-  Main main;
-  int visibility;
-  Wind wind;
-  Clouds clouds;
-  DateTime dateTime;
-  System sys;
-  int timezone;
-  int id;
-  String name;
-  int cod;
+  final Coordinates coord;
+  final List<Weather> weather;
+  final String base;
+  final Main main;
+  final int visibility;
+  final Wind wind;
+  final Clouds clouds;
+  final DateTime dateTime;
+  final System sys;
+  final int timezone;
+  final int id;
+  final String name;
+  final int cod;
 
-  CurrentWeather({
+  const CurrentWeather({
     this.coord,
     this.weather,
     this.base,
@@ -157,12 +157,12 @@ class CurrentWeather {
 }
 
 class Weather {
-  int id;
-  String main;
-  String description;
-  String icon;
+  final int id;
+  final String main;
+  final String description;
+  final String icon;
 
-  Weather({
+  const Weather({
     this.id,
     this.main,
     this.description,

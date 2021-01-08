@@ -1,28 +1,19 @@
 import 'dart:convert';
 
 class Clouds {
-  int value;
-  String name;
+  final int all;
 
-  Clouds({
-    this.value,
-    this.name,
-  });
+  const Clouds({this.all});
 
-  Clouds copyWith({int value, String name}) =>
-      Clouds(value: value ?? this.value, name: name ?? this.name);
+  Clouds copyWith({int all}) => Clouds(all: all ?? this.all);
 
-  Map<String, dynamic> toMap() => {
-        'value': value,
-        'name': name,
-      };
+  Map<String, dynamic> toMap() => {'all': all};
 
   factory Clouds.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
     return Clouds(
-      value: map['value'],
-      name: map['name'],
+      all: map['all'],
     );
   }
 
@@ -31,15 +22,15 @@ class Clouds {
   factory Clouds.fromJson(String source) => Clouds.fromMap(json.decode(source));
 
   @override
-  String toString() => 'Clouds(value: $value, name: $name)';
+  String toString() => 'Clouds(all: $all)';
 
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
 
-    return o is Clouds && o.value == value && o.name == name;
+    return o is Clouds && o.all == all;
   }
 
   @override
-  int get hashCode => value.hashCode ^ name.hashCode;
+  int get hashCode => all.hashCode;
 }

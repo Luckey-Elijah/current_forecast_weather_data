@@ -1,14 +1,14 @@
 import 'dart:convert';
 
 class System {
-  int type;
-  int id;
-  double message;
-  String country;
-  int sunrise;
-  int sunset;
+  final int type;
+  final int id;
+  final double message;
+  final String country;
+  final int sunrise;
+  final int sunset;
 
-  System({
+  const System({
     this.type,
     this.id,
     this.message,

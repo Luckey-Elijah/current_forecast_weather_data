@@ -1,14 +1,14 @@
 import 'dart:convert';
 
 class Main {
-  double tempurature;
-  double feelsLike;
-  double tempuratureMinimum;
-  double tempuratureMaximum;
-  int pressure;
-  int humidity;
+  final double tempurature;
+  final double feelsLike;
+  final double tempuratureMinimum;
+  final double tempuratureMaximum;
+  final int pressure;
+  final int humidity;
 
-  Main({
+  const Main({
     this.tempurature,
     this.feelsLike,
     this.tempuratureMinimum,
