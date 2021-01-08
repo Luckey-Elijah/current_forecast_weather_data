@@ -17,13 +17,14 @@ class System {
     this.sunset,
   });
 
-  System copyWith(
-      {int type,
-      int id,
-      double message,
-      String country,
-      int sunrise,
-      int sunset}) {
+  System copyWith({
+    int type,
+    int id,
+    double message,
+    String country,
+    int sunrise,
+    int sunset,
+  }) {
     return System(
       type: type ?? this.type,
       id: id ?? this.id,
