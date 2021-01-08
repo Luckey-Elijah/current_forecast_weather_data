@@ -5,6 +5,12 @@ Created from templates made available by Stagehand under a BSD-style
 
 ## Usage
 
+Add your [OpenWeather API key](https://home.openweathermap.org/api_keys) to `secrets.yaml` file:
+
+```yaml
+open_weather_api_key: "your_key_goes_here"
+```
+
 A simple usage example:
 
 ```dart
