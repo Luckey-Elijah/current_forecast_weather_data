@@ -24,4 +24,4 @@ Future<void> main(List<String> arguments) async {
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: https://github.com/Luckey-Elijah/open_weather/issues
-[license]: license
+[license]: LICENSE
