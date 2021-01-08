@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:collection/collection.dart';
+import 'package:open_weather/current_weather.dart';
 import 'clouds.dart';
 import 'coordinates.dart';
 import 'main.dart';
@@ -19,7 +20,9 @@ class CurrentWeather {
   final int timezone;
   final int id;
   final String name;
-  final int cod;
+  final int conditionCode;
+
+  Condition get condition => Condition(conditionCode);
 
   const CurrentWeather({
     this.coord,
@@ -34,7 +37,7 @@ class CurrentWeather {
     this.timezone,
     this.id,
     this.name,
-    this.cod,
+    this.conditionCode,
   });
 
   CurrentWeather copyWith({
@@ -50,7 +53,7 @@ class CurrentWeather {
     int timezone,
     int id,
     String name,
-    int cod,
+    int conditionCode,
   }) {
     return CurrentWeather(
       coord: coord ?? this.coord,
@@ -65,7 +68,7 @@ class CurrentWeather {
       timezone: timezone ?? this.timezone,
       id: id ?? this.id,
       name: name ?? this.name,
-      cod: cod ?? this.cod,
+      conditionCode: conditionCode ?? conditionCode,
     );
   }
 
@@ -83,7 +86,7 @@ class CurrentWeather {
       'timezone': timezone,
       'id': id,
       'name': name,
-      'cod': cod,
+      'cod': conditionCode,
     };
   }
 
@@ -104,7 +107,7 @@ class CurrentWeather {
       timezone: map['timezone'],
       id: map['id'],
       name: map['name'],
-      cod: map['cod'],
+      conditionCode: map['cod'],
     );
   }
 
@@ -115,7 +118,7 @@ class CurrentWeather {
 
   @override
   String toString() =>
-      'CurrentWeather(coord: $coord, weather: $weather, base: $base, main: $main, visibility: $visibility, wind: $wind, clouds: $clouds, dateTime: $dateTime, sys: $sys, timezone: $timezone, id: $id, name: $name, cod: $cod)';
+      'CurrentWeather(coord: $coord, weather: $weather, base: $base, main: $main, visibility: $visibility, wind: $wind, clouds: $clouds, dateTime: $dateTime, sys: $sys, timezone: $timezone, id: $id, name: $name, cod: $conditionCode)';
 
   @override
   bool operator ==(Object o) {
@@ -135,7 +138,7 @@ class CurrentWeather {
         o.timezone == timezone &&
         o.id == id &&
         o.name == name &&
-        o.cod == cod;
+        o.conditionCode == conditionCode;
   }
 
   @override
@@ -152,7 +155,7 @@ class CurrentWeather {
         timezone.hashCode ^
         id.hashCode ^
         name.hashCode ^
-        cod.hashCode;
+        conditionCode.hashCode;
   }
 }
 
