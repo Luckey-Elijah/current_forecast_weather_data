@@ -7,7 +7,7 @@ This repository is under a Mozilla Public License Version 2.0 [license][license]
 Add your [OpenWeather API key](https://home.openweathermap.org/api_keys) to `secrets.yaml` file:
 
 ```yaml
-open_weather_api_key: "your_key_goes_here"
+current_forecast_weather_data_api_key: "your_key_goes_here"
 ```
 
 A simple usage example:
@@ -23,5 +23,5 @@ Future<void> main(List<String> arguments) async {
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: https://github.com/Luckey-Elijah/open_weather/issues
+[tracker]: https://github.com/Luckey-Elijah/current_forecast_weather_data/issues
 [license]: LICENSE

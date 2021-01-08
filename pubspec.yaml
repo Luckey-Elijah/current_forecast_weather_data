@@ -1,7 +1,7 @@
-name: open_weather
+name: current_forecast_weather_data
 description: An API for OpenWeather's API suite.
 version: 1.0.0
-repository: https://github.com/Luckey-Elijah/open_weather
+repository: https://github.com/Luckey-Elijah/current_forecast_weather_data
 # homepage: https://www.example.com
 
 environment:

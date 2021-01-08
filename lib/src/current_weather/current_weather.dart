@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:open_weather/current_weather.dart';
+import 'package:current_forecast_weather_data/current_weather.dart';
 import 'clouds.dart';
 import 'coordinates.dart';
 import 'main.dart';

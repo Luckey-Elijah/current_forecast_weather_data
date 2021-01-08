@@ -9,8 +9,9 @@ String getSecretKey({String path = 'secrets.yaml'}) {
   var key = '';
   if (file?.existsSync() == true) {
     var doc = loadYaml(file.readAsStringSync());
-    key = doc['open_weather_api_key'] ??
-        (throw ArgumentError('open_weather_api_key does not exist'));
+    key = doc['current_forecast_weather_data_api_key'] ??
+        (throw ArgumentError(
+            'current_forecast_weather_data_api_key does not exist'));
   } else {
     throw PathException('File does not exist.');
   }

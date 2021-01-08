@@ -1,4 +1,4 @@
-import 'package:open_weather/current_weather.dart';
+import 'package:current_forecast_weather_data/current_weather.dart';
 import 'package:test/test.dart';
 
 void main() {
